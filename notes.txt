@@ -1,0 +1,3 @@
+NODE_ENV=production npm run build
+
+NODE_PATH=app/ NODE_ENV=production node app/server
