@@ -5,10 +5,13 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
-class App extends Component {
+injectTapEventPlugin();
 
+class App extends Component {
+    constructor (props) {
+        super(props);
+    }
     componentWillMount () {
-        injectTapEventPlugin();
     }
 
     componentDidMount() {
@@ -17,7 +20,10 @@ class App extends Component {
     render() {
         return (
             <MuiThemeProvider muiTheme={getMuiTheme()}>
-                <Header />
+                <div>
+                    <Header />
+                    {this.props.children}
+                </div>
             </MuiThemeProvider>
         );
     }

@@ -17,6 +17,7 @@ import {Provider} from 'react-redux';
 let server = new Express();
 let port = process.env.PORT || 3000;
 let scriptSrcs;
+global.navigator = { userAgent: 'all' };
 
 let styleSrc;
 if (process.env.NODE_ENV === 'production') {

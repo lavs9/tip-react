@@ -1,0 +1,30 @@
+.landing-1-1 {
+  background-image: url('http://localhost:3001/static/homepageicon/BGimage.png');
+  background-repeat:no-repeat;
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  color: #fff;
+  min-height: 600px;
+}
+
+.landing-1-2 {
+  background-image: url('http://localhost:3001/static/homepageicon/gradient.png');
+  background-repeat:no-repeat;
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  color: #fff;
+  opacity: 0.75;
+}
+
+.landing-1-3 {
+  background-color: #573fe0;
+  color: #fff;
+  opacity: 0.75;
+  min-height: 250px;
+}
