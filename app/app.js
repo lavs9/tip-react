@@ -7,8 +7,9 @@ import createBrowserHistory from 'history/lib/createBrowserHistory';
 import configureStore from 'store/configureStore';
 import createRoutes from 'routes/index';
 import {Provider} from 'react-redux';
-
-const history = createBrowserHistory();
+import { browserHistory } from 'react-router';
+import { syncHistoryWithStore } from 'react-router-redux';
+// const history = createBrowserHistory();
 
 let reduxState ;
 if (window.__REDUX_STATE__) {
@@ -22,6 +23,9 @@ if (window.__REDUX_STATE__) {
 }
 
 const store = configureStore(reduxState);
+const history = syncHistoryWithStore(browserHistory, store, {
+    selectLocationState: (state) => state.routing
+});
 
 ReactDOM.render((
     <Provider store={store}>

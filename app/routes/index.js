@@ -4,6 +4,7 @@ import {Router, Route, IndexRoute} from 'react-router';
 import App from 'containers/App';
 import Home from 'containers/Home';
 
+
 export default function (history) {
     return (
         <Router history={history}>

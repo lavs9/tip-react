@@ -44,27 +44,33 @@ class App extends Component {
         };
         return (
             <div>
-                <AppBar
-                    style={global.location && global.location.pathname === '/' ? appBarStyleHome: appBarStyle}
-                    title={<Link to="/" style={titleStyle}><span>TIPBABA</span></Link>}
-                    iconElementLeft={<IconButton onClick={this._handleToggle}><MenuIcon /></IconButton>} >
+                {this.props.location &&
+                    <AppBar className="appbar"
+                        style={this.props.location.pathname === '/' ? appBarStyleHome: appBarStyle}
+                        title={<Link to="/" style={titleStyle}><span>TIPBABA</span></Link>}
+                        iconElementLeft={<IconButton onClick={this._handleToggle}><MenuIcon /></IconButton>}>
 
-                    {global.location && global.location.pathname !== '/' &&
-                        <div>
-                            <TextField
-                                hintStyle={{color: '#fff'}} inputStyle={{color: '#fff'}}
-                                hintText='Search for stocks and experts'
-                                type="search" />
-                            <IconButton iconStyle={{fill: '#fff'}}><SearchIcon /></IconButton>
-                        </div>
-                    }
+                        {this.props.location.pathname !== '/' &&
+                            <div>
+                                <TextField
+                                    hintStyle={{color: '#fff'}} inputStyle={{color: '#fff'}}
+                                    hintText='Search for stocks and experts'
+                                    type="search"/>
+                                <IconButton iconStyle={{fill: '#fff'}}><SearchIcon /></IconButton>
+                            </div>
+                        }
 
                         <Link to="/about" style={buttonStyle}><FlatButton label="About" backgroundColor="transparent"
-                                                                          style={buttonStyle}/></Link>
-                        <FlatButton label="Sign In" backgroundColor="transparent" style={buttonStyle}/>
-                        <FlatButton label="Create Account" backgroundColor="transparent" style={buttonStyle}/>
-                        <FlatButton label="Get Mobile App" backgroundColor="transparent" style={buttonStyle}/>
-                </AppBar>
+                                                                          style={buttonStyle}
+                                                                          labelStyle={{fontWeight: '900'}}/></Link>
+                        <FlatButton label="Sign In" backgroundColor="transparent" style={buttonStyle}
+                                    labelStyle={{fontWeight: '900'}}/>
+                        <FlatButton label="Create Account" backgroundColor="transparent" style={buttonStyle}
+                                    labelStyle={{fontWeight: '900'}}/>
+                        <FlatButton label="Get Mobile App" backgroundColor="transparent" style={buttonStyle}
+                                    labelStyle={{fontWeight: '900'}}/>
+                    </AppBar>
+                }
                 <Drawer open={this.state.open}>
                     <AppBar
                         title={<Link to="/" style={buttonStyle}><span>TIPBABA</span></Link>}
@@ -77,9 +83,10 @@ class App extends Component {
     }
 }
 
-function mapStateToProps() {
-    return {};
+function mapStateToProps(state) {
+    return { location: state.routing.locationBeforeTransitions};
 }
+
 
 export default connect(mapStateToProps, {  })(App);
 

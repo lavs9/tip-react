@@ -3,10 +3,10 @@ import {connect} from 'react-redux';
 import _ from 'lodash';
 import { Link } from 'react-router';
 import { IconButton, TextField, Subheader, FlatButton } from 'material-ui';
-import SearchIcon from 'material-ui/svg-icons/action/search';
+import SearchIcon from '../../../node_modules/material-ui/svg-icons/action/search';
 import { Badge } from 'react-bootstrap'
 
-class Home extends Component {
+class Upper extends Component {
     constructor (props) {
         super(props);
         this.state = {
@@ -30,7 +30,7 @@ class Home extends Component {
             return (
                 <div className="col-md-2" key={index}>
                     <Link to={value.route} style={buttonStyle}><FlatButton label={value.title} backgroundColor="transparent"
-                                                                     style={buttonStyle} labelStyle={{fontWeight: '900'}}/></Link>
+                                                                           style={buttonStyle} labelStyle={{fontWeight: '900'}}/></Link>
                 </div>
             )
         });
@@ -40,9 +40,9 @@ class Home extends Component {
                     <div className="jumbotron text-center  landing-1-2" style={{marginBottom: '0px'}}>
                         <div style={{marginTop: '10%'}}>
                             <TextField type="text"
-                            floatingLabelStyle={{color: '#fff'}} inputStyle={{color: '#fff'}} style={{width: '50%'}}
-                            floatingLabelText='Search for stocks and experts'
-                            type="search" />
+                                       floatingLabelStyle={{color: '#fff'}} inputStyle={{color: '#fff'}} style={{width: '50%'}}
+                                       floatingLabelText='Search for stocks and experts'
+                                       type="search" />
                             <IconButton iconStyle={{fill: '#fff'}} tooltip="Search"><SearchIcon /></IconButton>
                         </div>
                         <div className="col-md-4"></div><br />
@@ -83,4 +83,4 @@ function mapStateToProps() {
     return {};
 }
 
-export default connect(mapStateToProps, {})(Home);
+export default connect(mapStateToProps, {})(Upper);

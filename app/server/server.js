@@ -3,7 +3,7 @@ import path from 'path';
 
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
-import {RoutingContext, match} from 'react-router';
+import {RouterContext, match} from 'react-router';
 
 import {createMemoryHistory, useQueries} from 'history';
 import compression from 'compression';
@@ -50,7 +50,7 @@ server.get('*', (req, res)=> {
     let routes = crateRoutes(history);
     let location = history.createLocation(req.url);
 
-    match({routes, location}, (error, redirectLocation, renderProps) => {
+    match({routes, location: req.url}, (error, redirectLocation, renderProps) => {
         if (redirectLocation) {
             res.redirect(301, redirectLocation.pathname + redirectLocation.search);
         } else if (error) {
@@ -65,7 +65,7 @@ server.get('*', (req, res)=> {
                 let reduxState = escape(JSON.stringify(store.getState()));
                 let html = ReactDOMServer.renderToString(
                     <Provider store={store}>
-                        { <RoutingContext {...renderProps}/> }
+                        { <RouterContext {...renderProps}/> }
                     </Provider>
                 );
 
