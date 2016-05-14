@@ -19,7 +19,7 @@ class Lower extends Component {
                         <div className="col-md-6 landing-3">
                             <div style={divStyle}>
                                 <Avatar
-                                    src="http://localhost:3001/static/homepageicon/icon1.png"
+                                    src="http://dev.subham.me/homepageicon/icon1.png"
                                     size={150}
                                     style={avatarStyle}
                                 />
@@ -34,7 +34,7 @@ class Lower extends Component {
                         <div className="col-md-6 landing-4">
                             <div style={divStyle}>
                                 <Avatar
-                                    src="http://localhost:3001/static/homepageicon/icon2.png"
+                                    src="http://dev.subham.me/homepageicon/icon2.png"
                                     size={150}
                                     style={avatarStyle}
                                 />
@@ -50,7 +50,7 @@ class Lower extends Component {
                         <div className="col-md-6 landing-5">
                             <div style={divStyle}>
                                 <Avatar
-                                    src="http://localhost:3001/static/homepageicon/icon3.png"
+                                    src="http://dev.subham.me/homepageicon/icon3.png"
                                     size={150}
                                     style={avatarStyle}
                                 />
@@ -66,7 +66,7 @@ class Lower extends Component {
                         <div className="col-md-6 landing-6">
                             <div style={divStyle}>
                                 <Avatar
-                                    src="http://localhost:3001/static/homepageicon/icon4.png"
+                                    src="http://dev.subham.me/homepageicon/icon4.png"
                                     size={150}
                                     style={avatarStyle}
                                 />
