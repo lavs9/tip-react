@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { FontIcon } from 'material-ui'
+import { Link } from 'react-router';
+import { FlatButton, IconButton } from 'material-ui';
 
 class App extends Component {
     constructor (props) {
@@ -8,35 +9,91 @@ class App extends Component {
     }
     
     render () {
+        let buttonStyle = {
+            marginTop: '1%',
+            color: '#573fe0',
+            textDecoration: 'none'
+        };
+
         return (
             <footer style={{backgroundColor: '#232323'}}>
                 <div className="container">
-                    <div className="row">
-                        <div className="col-md-4">
-                            <h2 style={{color: '#fff'}}>FOLLOW US</h2> <br />
-                            <FontIcon className="material-icons" >fa-facebook</FontIcon>
-                            <FontIcon className="material-icons fa fa-facebook" />
-                        </div>
-                        <div className="col-md-4">
-                            <span className="copyright">Copyright © Your Website 2014</span>
-                        </div>
-                        <div className="col-md-4">
-                            <ul className="list-inline social-buttons">
-                                <li><a href="#"><i className="fa fa-twitter"></i></a>
+                    <div className="row" style={{marginBottom: '2%'}}>
+                        <div className="col-md-4" style={{marginTop: '3%'}}>
+                            <h3 style={{color: '#fff'}}>FOLLOW US</h3> <br />
+                            <ul className="list-inline">
+                                <li>
+                                    <IconButton
+                                        className="btn btn-social-icon btn-facebook"
+                                        iconStyle={{color: '#fff'}}
+                                        iconClassName="fa fa-facebook"
+                                        style={{backgroundColor: '#2d4373'}}
+                                        tooltip="Facebook"
+                                        href="https://www.facebook.com"
+                                        linkButton={true}
+                                    />
                                 </li>
-                                <li><a href="#"><i className="fa fa-facebook"></i></a>
+                                <li>
+                                    <IconButton
+                                        className="btn btn-social-icon btn-google"
+                                        iconStyle={{color: '#fff'}}
+                                        iconClassName="fa fa-google-plus"
+                                        style={{backgroundColor: '#c23321'}}
+                                        tooltip="Google Plus"
+                                        href="https://plus.google.com"
+                                        linkButton={true}
+                                    />
                                 </li>
-                                <li><a href="#"><i className="fa fa-linkedin"></i></a>
+                                <li>
+                                    <IconButton
+                                        className="btn btn-social-icon btn-twitter"
+                                        iconStyle={{color: '#fff'}}
+                                        iconClassName="fa fa-twitter"
+                                        style={{backgroundColor: '#2795e9'}}
+                                        tooltip="Twitter"
+                                        href="https://www.twitter.com"
+                                        linkButton={true}
+                                    />
+                                </li>
+                                <li>
+                                    <IconButton
+                                        className="btn btn-social-icon btn-linkedin"
+                                        iconStyle={{color: '#fff'}}
+                                        iconClassName="fa fa-linkedin"
+                                        style={{backgroundColor: '#005983'}}
+                                        tooltip="LinkedIn"
+                                        href="https://www.linkedin.com"
+                                        linkButton={true}
+                                    />
                                 </li>
                             </ul>
                         </div>
-                        <div className="col-md-4">
-                            <ul className="list-inline quicklinks">
-                                <li><a href="#">Privacy Policy</a>
-                                </li>
-                                <li><a href="#">Terms of Use</a>
-                                </li>
-                            </ul>
+                        <div className="col-md-4" style={{marginTop: '12%', marginLeft: '10%'}}>
+                            <span className="copyright">Copyright © TIPBABA2015</span>
+                        </div>
+                        <div className="col-md-4 text-left" style={{marginTop: '3%', marginLeft: '-10%', color: '#5d5d5d'}}>
+                            <div className="row">
+                                <div className="col-md-6">
+                                    <Link to='/blog' style={buttonStyle}><FlatButton label='BLOG' backgroundColor="transparent"
+                                                                                           style={buttonStyle} labelStyle={{fontWeight: '900'}}/></Link>
+                                </div>
+                                <div className="col-md-6">
+                                    <Link to='/legal-terms' style={buttonStyle}><FlatButton label='LEGAL TERMS' backgroundColor="transparent"
+                                                                                      style={buttonStyle} labelStyle={{fontWeight: '900'}}/></Link>
+                                </div>
+                            </div>
+
+                            <div className="row">
+                                <div className="col-md-6">
+                                    <Link to='/team' style={buttonStyle}><FlatButton label='THE TEAM' backgroundColor="transparent"
+                                                                                     style={buttonStyle} labelStyle={{fontWeight: '900'}}/></Link>
+                                </div>
+                                <div className="col-md-6">
+                                    <Link to='/contact-us' style={buttonStyle}><FlatButton label='CONTACT US' backgroundColor="transparent"
+                                                                                            style={buttonStyle} labelStyle={{fontWeight: '900'}}/></Link>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>

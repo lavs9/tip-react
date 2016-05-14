@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import _ from 'lodash';
 import { Link } from 'react-router';
-import { IconButton, TextField, Subheader, FlatButton } from 'material-ui';
+import { IconButton, TextField, FlatButton } from 'material-ui';
 import SearchIcon from '../../../node_modules/material-ui/svg-icons/action/search';
 import { Badge } from 'react-bootstrap'
 
