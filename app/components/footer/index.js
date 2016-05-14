@@ -14,6 +14,10 @@ class App extends Component {
             color: '#573fe0',
             textDecoration: 'none'
         };
+        let iconStyle = {
+            color: '#fff',
+            padding: '16%'
+        };
 
         return (
             <footer style={{backgroundColor: '#232323'}}>
@@ -25,7 +29,7 @@ class App extends Component {
                                 <li>
                                     <IconButton
                                         className="btn btn-social-icon btn-facebook"
-                                        iconStyle={{color: '#fff'}}
+                                        iconStyle={iconStyle}
                                         iconClassName="fa fa-facebook"
                                         style={{backgroundColor: '#2d4373'}}
                                         tooltip="Facebook"
@@ -36,7 +40,7 @@ class App extends Component {
                                 <li>
                                     <IconButton
                                         className="btn btn-social-icon btn-google"
-                                        iconStyle={{color: '#fff'}}
+                                        iconStyle={iconStyle}
                                         iconClassName="fa fa-google-plus"
                                         style={{backgroundColor: '#c23321'}}
                                         tooltip="Google Plus"
@@ -47,7 +51,7 @@ class App extends Component {
                                 <li>
                                     <IconButton
                                         className="btn btn-social-icon btn-twitter"
-                                        iconStyle={{color: '#fff'}}
+                                        iconStyle={iconStyle}
                                         iconClassName="fa fa-twitter"
                                         style={{backgroundColor: '#2795e9'}}
                                         tooltip="Twitter"
@@ -58,7 +62,7 @@ class App extends Component {
                                 <li>
                                     <IconButton
                                         className="btn btn-social-icon btn-linkedin"
-                                        iconStyle={{color: '#fff'}}
+                                        iconStyle={iconStyle}
                                         iconClassName="fa fa-linkedin"
                                         style={{backgroundColor: '#005983'}}
                                         tooltip="LinkedIn"
