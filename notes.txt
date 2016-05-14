@@ -28,13 +28,13 @@ server {
         }
  }
 
- [program:tip_react]
- command = /usr/bin/node /var/www/tip-react/app/server --log-file /var/www/logs/gunicorn.log
- stdout_logfile = /var/www/tip-react/logs/supervisor.log
- stderr_logfile = /var/www/tip-react/logs/supervisor_err.log
- directory = /var/www/tip-react
- environment=LD_LIBRARY_PATH="/usr/local/lib", NODE_PATH="/var/www/tip-react/front-end/app/", NODE_ENV=production
- autostart=true
- autorestart=true
- user = ubuntu
+[program:tip_react]
+command = /usr/bin/node /var/www/tip-react/app/server --log-file /var/www/logs/gunicorn.log
+stdout_logfile = /var/www/logs/supervisor.log
+stderr_logfile = /var/www/logs/supervisor_err.log
+directory = /var/www/tip-react
+environment=LD_LIBRARY_PATH="/usr/local/lib", NODE_PATH="/var/www/tip-react/app/", NODE_ENV=production
+autostart=true
+autorestart=true
+user = ubuntu
 
